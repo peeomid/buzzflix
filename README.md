@@ -1,5 +1,5 @@
 # Buzzflix
-This is developed using Django as a very simple backend APIs.
+This is developed using Django as a very simple backend API.
 
 ## Setup
 - Clone the repo.
