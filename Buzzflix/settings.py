@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'debug_toolbar',
+    'Buzzflix.movies',
+    'Buzzflix.analytics'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'Buzzflix.urls'
@@ -118,3 +123,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 50
+}
+
+# Some predefined events
+DEFINED_ANALYTICS_EVENTS = (
+        'MOVIE_VIEW', # user open movie details
+        'MOVIE_START', # start watching session
+        'MOVIE_END', # end a watching session, with value of timestamp at which the movie stops
+        'MOVIE_FINISH', # a movie is watched till the end
+    )
