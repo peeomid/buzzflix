@@ -32,11 +32,11 @@ There are 2 APIs for this part:
 2. `/api/movies/`: This is one additional API to call to get movies of a given category. The call should be `/api/movies/?category=70`, where `70` is category id.
 
 ## Analytics API
- This is desired to track logged in users
+ This is designed to track logged in users only.
  
- There're 2 APIs for this part as well:
+ There're 2 APIs for this part:
  
- 1. `/api/track/`: this is the API frontend should call to track users' activities.
+ 1. `/api/track/`: this is the API that frontend should call to track users' activities.
 	 - This is `POST` call only.
 	 - Value should be passed in request body, with following parameters:
 		 +  `event_name` [required]: name of the event. Some predefined event name are below. Frontend can send additional custom event as well.
